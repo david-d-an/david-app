@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'david-app';
+  textcolor: string;
+
+  changeColor() {
+    this.textcolor = 'red';
+  }
+
+  returnColor() {
+    this.textcolor = 'black';
+  }
 }
