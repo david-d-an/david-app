@@ -22,7 +22,7 @@ export class HeroService {
   }
 
   getHeroes() {
-    // this.logger.log('Getting heroes ...');
+    this.logger.log('Getting heroes ...');
     return HEROES;
   }
 }
