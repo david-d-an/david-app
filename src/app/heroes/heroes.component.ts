@@ -4,4 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-heroes',
   templateUrl: './heroes.component.html'
 })
-export class HeroesComponent { }
+export class HeroesComponent {
+  defualtColor = 'pink';
+}

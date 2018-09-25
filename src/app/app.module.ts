@@ -6,22 +6,21 @@ import { HeroesModule } from './heroes/heroes.module';
 import { AppComponent } from './app.component';
 import { MyCustomComponent } from './my-custom/my-custom.component';
 // import { ListingPageComponent } from './listing-page/listing-page.component';
-
 // import { HeroesComponent } from './heroes/heroes.component';
 // import { HeroListComponent } from './heroes/hero-list.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    // ListingPageComponent,
-    MyCustomComponent,
-    // HeroListComponent,
-    // HeroesComponent
-  ],
   imports: [
     BrowserModule,
-    // MyCustomModule,
     HeroesModule
+    // MyCustomModule,
+  ],
+  declarations: [
+    AppComponent,
+    MyCustomComponent,
+    // ListingPageComponent,
+    // HeroListComponent,
+    // HeroesComponent
   ],
   providers: [],
   bootstrap: [
