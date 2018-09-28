@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="m-t-1">
+  	<button class="btn btn-primary" (click)="doGET()">GET</button>
+  	<button class="btn btn-primary" (click)="doPOST()">POST</button>
+  	<button class="btn btn-primary" (click)="doPUT()">PUT</button>
+  	<button class="btn btn-primary" (click)="doDELETE()">DELETE</button>
+	</div>
+</div>
+
+<div class="row" [hidden]="true">
+  <div class="m-t-1">
+  	<button class="btn btn-secondary" (click)="doGETAsPromise()">As Promise</button>
+  	<button class="btn btn-secondary" (click)="doGETAsPromiseError()">Error as Promise</button>
+  	<button class="btn btn-secondary" (click)="doGETAsObservableError()">Error as Observable</button>
+	</div>
+</div>
+
+<div class="row" [hidden]="true">
+  <div class="m-t-1">
+  	<button class="btn btn-danger" (click)="doGETWithHeaders()">With Headers</button>
+	</div>
+</div>
+
+<br/>
+<hr/>
+<div class="row">
+  <!--<span>{{ data }}</span>-->
+  <div *ngFor="let article of jsonArticles">
+    <div class="row">
+      <div class="col-lg-1">
+        Title:
+      </div>
+      <div class="col-lg-5">
+        {{ article.title }}
+      </div>
+      <div class="col-lg-1">
+        Author:
+      </div>
+      <div class="col-lg-5">
+        {{article.author}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-1">
+        URL:
+      </div>
+      <div class="col-lg-11">
+        <a href='{{ article.url }}'>{{ article.url }}</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        {{ article.description }}
+      </div>
+    </div>
+    <hr/>
+  </div>
+</div>

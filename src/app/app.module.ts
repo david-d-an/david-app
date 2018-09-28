@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HeroesModule } from './heroes/heroes.module';
+import { HttpTestModule } from './http-test/http-test.module';
 // import { MyCustomModule } from './my-custom/my-custom.module';
 
 import { AppComponent } from './app.component';
@@ -12,7 +13,8 @@ import { MyCustomComponent } from './my-custom/my-custom.component';
 @NgModule({
   imports: [
     BrowserModule,
-    HeroesModule
+    HeroesModule,
+    HttpTestModule
     // MyCustomModule,
   ],
   declarations: [
