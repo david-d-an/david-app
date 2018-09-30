@@ -1,5 +1,8 @@
 import { HttpModule, Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import 'rxjs/add/operator/map';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-http-test',
@@ -12,26 +15,35 @@ export class HttpTestComponent implements OnInit {
   apiRoot: string;
   data: string;
   jsonArticles: any;
+  response$: Observable<Response>;
 
   constructor(private http: Http) {
     this.apiRoot = 'http://httpbin.org';
   }
 
   ngOnInit() {
-    // this.data = '{"Name":"David"}';
-    let apiUrl: string;
-    apiUrl = 'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=50f8cfce6ce0405cba5e9ea7626b23a5';
-    this.http.get(apiUrl).subscribe(res => {
-        // console.log(res.text());
-        this.data = res.text();
-        const jsonData = JSON.parse(this.data);
-        this.jsonArticles = jsonData.articles;
-      }
-    );
+    // apiUrl = 'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=50f8cfce6ce0405cba5e9ea7626b23a5';
+    const sources = 'bbc-news';
+    const apiKey = '50f8cfce6ce0405cba5e9ea7626b23a5';
+    const apiUrl = 'https://newsapi.org/v2/top-headlines?sources=' + sources + '&apiKey=' + apiKey;
 
-    // console.log(this.data);
-    // const jsonData = JSON.parse(this.data);
-    // this.jsonArticles = jsonData.articles;
+    const response$ = this.http.get(apiUrl);
+    // response$.subscribe(res => {
+    //   // console.log(res.json());
+    //   // const jsonData = res.json();
+    //   // this.jsonArticles = jsonData.articles;
+    //   this.jsonArticles = res.json().articles;
+    // });
+
+    response$
+    .pipe(
+        map((res$: Response) => {
+          return res$;
+        })
+    )
+    .subscribe((res$: any) => {
+      this.jsonArticles = res$.json().articles;
+    });
   }
 
   doGET() {
