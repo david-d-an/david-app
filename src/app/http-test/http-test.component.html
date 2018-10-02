@@ -7,7 +7,7 @@
 	</div>
 </div>
 
-<div class="row" [hidden]="true">
+<div class="row" [hidden]="false">
   <div class="m-t-1">
   	<button class="btn btn-secondary" (click)="doGETAsPromise()">As Promise</button>
   	<button class="btn btn-secondary" (click)="doGETAsPromiseError()">Error as Promise</button>
@@ -15,14 +15,30 @@
 	</div>
 </div>
 
-<div class="row" [hidden]="true">
+<div class="row" [hidden]="false">
   <div class="m-t-1">
   	<button class="btn btn-danger" (click)="doGETWithHeaders()">With Headers</button>
 	</div>
 </div>
 
+<!--
+<div>{{ (staticresponse$ | async | json) }}</div>
+<div *ngIf="(staticresponse$ | async | json)">
+  <div class="user" *ngFor="let article of (staticresponse$ | async | json).articles">
+    1
+  </div>
+</div>
+-->
+
+
 <br/>
 <hr/>
+
+<div class="row">
+  <input type="text" />
+</div>
+<hr/>
+
 <div class="row">
   <!--<span>{{ data }}</span>-->
   <div *ngFor="let article of jsonArticles">
