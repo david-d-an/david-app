@@ -1,11 +1,12 @@
-import { async } from '@angular/core/testing';
 import { HttpModule, Http, Headers, Response } from '@angular/http';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Observable, fromEvent } from 'rxjs';
-import 'rxjs/add/operator/map';
-import { map } from 'rxjs/operators';
 import { Response as StaticResponse } from '@angular/http/src/static_response';
+
+import { map } from 'rxjs/operators';
+import { UpperCasePipe } from '@angular/common';
+// import { async } from '@angular/core/testing';
 
 @Component({
   selector: 'app-http-test',
@@ -15,45 +16,38 @@ import { Response as StaticResponse } from '@angular/http/src/static_response';
 export class HttpTestComponent implements OnInit {
   // title = 'app-http-test';
   apiRoot = 'http://httpbin.org';
-  data: string;
   jsonArticles: any;
   public staticresponse$: Observable<StaticResponse>;
+  @Input() name: string;
 
   constructor(private http: Http) {
-    // const simpleObservable = new Observable((observer) => {
-    //   observer.next('bla bla bla');
-    //   observer.complete();
-    // });
-
   }
 
   public ngOnInit() {
-    const node = document.querySelector('input[type=text]');
-    const input$ = fromEvent(node, 'input');
+    /* Interactive Input Box */
+    const input$ = fromEvent(document.querySelector('.textbox-name'), 'input');
+    input$
+      .pipe(
+        map(event => (<HTMLInputElement>event.target).value)
+      )
+      .subscribe({
+        next: val => console.log(`Event triggered: ${ this.name = val }`),
+        error: err => console.log(`Error rasied: ${ err }`),
+        complete: () => console.log(`Task completed`)
+      });
 
-    input$.subscribe({
-      next: event => {
-        console.log(`Event triggered: ${ (<HTMLInputElement>event.target).value } `);
-      },
-      error: err => console.log(`Error rasied: ${ err }`),
-      complete: () => console.log(`Task completed `)
-    });
-
-    // apiUrl = 'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=50f8cfce6ce0405cba5e9ea7626b23a5';
+    /* API Reader */
+    const apiRoot = 'https://newsapi.org/v2/top-headlines';
     const sources = 'bbc-news';
     const apiKey = '50f8cfce6ce0405cba5e9ea7626b23a5';
-    const apiUrl = 'https://newsapi.org/v2/top-headlines?sources=' + sources + '&apiKey=' + apiKey;
+    const apiUrl = `${apiRoot}?sources=${sources}&apiKey=${apiKey}`;
 
     this.staticresponse$ = this.http.get(apiUrl);
     this.staticresponse$
-    .pipe(
-        map((res$: Response) => {
-          return res$.json().articles;
-        })
-    )
-    .subscribe((articles: any) => {
-      this.jsonArticles = articles;
-    });
+      .pipe(
+          map((res$: Response) => res$.json().articles)
+      )
+      .subscribe((articles: any) => this.jsonArticles = articles);
   }
 
   doGET() {
@@ -65,14 +59,25 @@ export class HttpTestComponent implements OnInit {
     const search = new URLSearchParams();
     search.set('foo', 'moo');
     search.set('limit', '25');
-    this.http.get(url, { search: search }).subscribe(res => console.log(res.text()));
+    this.http
+      .get(url, { search: search })
+      .subscribe(res => console.log(res.text()));
   }
 
   doPOST() {
     console.log('POST');
     const url = `${this.apiRoot}/post`;
 
-    this.http.post(url, { moo: 'foo', goo: 'loo' }).subscribe(res => console.log(res.text()));
+    this.http
+      .post(
+        url,
+        {
+          moo: 'foo',
+          goo: 'loo'
+        }
+      )
+      .pipe(map((res$: Response) => res$.json()))
+      .subscribe(res => console.log(res.data));
 
     // const search = new URLSearchParams();
     // search.set('foo', 'moo');
@@ -99,7 +104,9 @@ export class HttpTestComponent implements OnInit {
     const search = new URLSearchParams();
     search.set('foo', 'moo');
     search.set('limit', '25');
-    this.http.delete(url, {search}).subscribe(res => console.log(res.text()));
+    this.http
+      .delete(url, {search})
+      .subscribe(res => console.log(res.text()));
   }
 
   doGETAsPromise() {
