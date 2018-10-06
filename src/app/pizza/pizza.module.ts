@@ -4,11 +4,13 @@ import { PizzaComponent } from './pizza.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     PizzaComponent
   ],
-  declarations: [PizzaComponent]
+  declarations: [
+    PizzaComponent
+  ]
 })
 export class PizzaModule { }

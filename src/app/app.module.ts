@@ -1,34 +1,38 @@
-import { PizzaModule } from './pizza/pizza.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HeroesModule } from './heroes/heroes.module';
+import { HttpClientModule } from '@angular/common/http';
+
+import { PizzaModule } from './pizza/pizza.module';
 import { HttpTestModule } from './http-test/http-test.module';
+// import { HeroesModule } from './heroes/heroes.module';
 // import { MyCustomModule } from './my-custom/my-custom.module';
 
 import { AppComponent } from './app.component';
 import { MyCustomComponent } from './my-custom/my-custom.component';
+import { SvctestComponent } from './svctest/svctest.component';
+import { T2Component } from './t2/t2.component';
 // import { ListingPageComponent } from './listing-page/listing-page.component';
 // import { HeroesComponent } from './heroes/heroes.component';
 // import { HeroListComponent } from './heroes/hero-list.component';
-
-import { HttpClientModule } from '@angular/common/http';
-
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpTestModule,
-    PizzaModule
+    PizzaModule,
+    // SvctestModule
     // HeroesModule,
     // MyCustomModule,
   ],
   declarations: [
     AppComponent,
-    MyCustomComponent
+    MyCustomComponent,
     // ListingPageComponent,
     // HeroListComponent,
     // HeroesComponent
+    SvctestComponent,
+    T2Component
   ],
   providers: [],
   bootstrap: [
