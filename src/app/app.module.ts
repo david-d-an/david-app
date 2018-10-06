@@ -1,3 +1,4 @@
+import { PizzaModule } from './pizza/pizza.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HeroesModule } from './heroes/heroes.module';
@@ -10,16 +11,21 @@ import { MyCustomComponent } from './my-custom/my-custom.component';
 // import { HeroesComponent } from './heroes/heroes.component';
 // import { HeroListComponent } from './heroes/hero-list.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   imports: [
     BrowserModule,
-    HeroesModule,
-    HttpTestModule
+    HttpClientModule,
+    HttpTestModule,
+    PizzaModule
+    // HeroesModule,
     // MyCustomModule,
   ],
   declarations: [
     AppComponent,
-    MyCustomComponent,
+    MyCustomComponent
     // ListingPageComponent,
     // HeroListComponent,
     // HeroesComponent

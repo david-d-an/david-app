@@ -1,0 +1,64 @@
+<div class="row">
+  <h1 class="text-center">Welcome to Deep Dish Pizza!</h1>
+</div>
+<hr/>
+
+<div class="row">
+  <h2 class="text-center">List of Pizzas We Serve</h2>
+</div>
+<br />
+
+<div class="row">
+  <div class="col-lg-3 text-center">
+    ID
+  </div>
+  <div class="col-lg-4 text-center">
+    Pizza Name
+  </div>
+  <div class="col-lg-5 text-center">
+    Cooked at
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div *ngFor="let pizza of jsonPizzas">
+    <div class="row">
+      <div class="col-lg-3 text-center">
+        {{ pizza.id }}
+      </div>
+      <div class="col-lg-4 text-center">
+        {{ pizza.name }}
+      </div>
+      <div class="col-lg-5 text-center">
+        {{ pizza.cookedOn | date: 'MM/dd/yyyy hh:mm:ss' }}
+      </div>
+    </div>
+    <hr/>
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-lg-2">
+    Enter Pizza ID:
+  </div>
+  <div class="col-lg-2">
+    <input type="text" id="tbPizzaId" placeholder="Pizza ID" />
+  </div>
+
+  <div class="col-lg-2">
+    <span>You selected:</span>
+  </div>
+  <div class="col-lg-6">
+    <div class="col-lg-4">
+      {{ pizzaName | titlecase }}
+    </div>
+    <div class="col-lg-8">
+      cooked at {{ pizzaCookedOn | date : "MM/dd/yyyy hh:mm:ss" }}
+    </div>
+  </div>
+</div>
+<br />
+
+
+<div class="row">
+</div>

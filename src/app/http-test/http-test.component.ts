@@ -1,3 +1,4 @@
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { HttpModule, Http, Headers, Response } from '@angular/http';
 
 import { Component, OnInit, Input } from '@angular/core';
@@ -5,13 +6,15 @@ import { Observable, fromEvent } from 'rxjs';
 import { Response as StaticResponse } from '@angular/http/src/static_response';
 
 import { map } from 'rxjs/operators';
-import { UpperCasePipe } from '@angular/common';
+// import { UpperCasePipe } from '@angular/common';
 // import { async } from '@angular/core/testing';
+
 
 @Component({
   selector: 'app-http-test',
   templateUrl: './http-test.component.html',
-  styleUrls: ['./http-test.component.css']
+  styleUrls: ['./http-test.component.css'],
+  providers: []
 })
 export class HttpTestComponent implements OnInit {
   // title = 'app-http-test';
@@ -45,7 +48,7 @@ export class HttpTestComponent implements OnInit {
     this.staticresponse$ = this.http.get(apiUrl);
     this.staticresponse$
       .pipe(
-          map((res$: Response) => res$.json().articles)
+        map((res$: Response) => res$.json().articles)
       )
       .subscribe((articles: any) => this.jsonArticles = articles);
   }

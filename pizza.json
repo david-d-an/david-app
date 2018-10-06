@@ -1,0 +1,19 @@
+{
+    "Pizzas": [
+        {
+            "id": 1,
+            "name": "Cheese Pizza",
+            "cookedOn": "01/01/2018 11:00:00"
+        },
+        {
+            "id": 2,
+            "name": "Pepperoni Pizza",
+            "cookedOn": "02/01/2018 11:00:00"
+        },
+        {
+            "id": 3,
+            "name": "Hawaiian Pizza",
+            "cookedOn": "03/01/2018 11:00:00"
+        }
+    ]
+}
