@@ -9,8 +9,6 @@ import { HttpTestModule } from './http-test/http-test.module';
 
 import { AppComponent } from './app.component';
 import { MyCustomComponent } from './my-custom/my-custom.component';
-import { SvctestComponent } from './svctest/svctest.component';
-import { T2Component } from './t2/t2.component';
 // import { ListingPageComponent } from './listing-page/listing-page.component';
 // import { HeroesComponent } from './heroes/heroes.component';
 // import { HeroListComponent } from './heroes/hero-list.component';
@@ -31,8 +29,6 @@ import { T2Component } from './t2/t2.component';
     // ListingPageComponent,
     // HeroListComponent,
     // HeroesComponent
-    SvctestComponent,
-    T2Component
   ],
   providers: [],
   bootstrap: [
