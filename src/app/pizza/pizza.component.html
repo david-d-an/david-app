@@ -46,15 +46,17 @@
   </div>
 
   <div class="col-lg-2">
-    <span>You selected:</span>
+    <span>You selected</span>
   </div>
   <div class="col-lg-6">
-    <div class="col-lg-4">
+    <div *ngIf="pizzaName; else elseBlock">
       {{ pizzaName | titlecase }}
+      cooked at
+      {{ pizzaCookedOn | date : "MMMM dd, yyyy hh:mm a" }}
     </div>
-    <div class="col-lg-8">
-      cooked at {{ pizzaCookedOn | date : "MM/dd/yyyy hh:mm:ss" }}
-    </div>
+    <ng-template #elseBlock>
+      none
+    </ng-template>
   </div>
 </div>
 <br />

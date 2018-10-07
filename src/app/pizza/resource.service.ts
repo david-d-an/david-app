@@ -1,4 +1,3 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { QueryOptions } from './query-options';
@@ -7,6 +6,7 @@ import { Serializer } from './serializer';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+// import { Injectable } from '@angular/core';
 // @Injectable({
 //   providedIn: 'root'
 // })
