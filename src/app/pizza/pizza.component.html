@@ -1,48 +1,58 @@
-<div class="row">
-  <h1 class="text-center">Welcome to Deep Dish Pizza!</h1>
-</div>
+
+<h2 class="text-center">Welcome to Deep Dish Pizza!</h2>
 <hr/>
 
-<div class="row">
-  <h2 class="text-center">List of Pizzas We Serve</h2>
-</div>
+<h3 class="text-center">List of Pizzas We Serve</h3>
 <br />
 
 <div class="row">
-  <div class="col-lg-3 text-center">
-    ID
-  </div>
-  <div class="col-lg-4 text-center">
-    Pizza Name
-  </div>
-  <div class="col-lg-5 text-center">
-    Cooked at
-  </div>
-</div>
-<hr />
-<div class="row">
-  <div *ngFor="let pizza of this.jsonPizzas">
-    <div class="row">
+  <div *ngIf="this.jsonPizzas; else noPizzasBlock">
+    <div class = "row">
       <div class="col-lg-3 text-center">
-        {{ pizza.id }}
+        ID
       </div>
       <div class="col-lg-4 text-center">
-        {{ pizza.name }}
+        Pizza Name
       </div>
       <div class="col-lg-5 text-center">
-        {{ pizza.cookedOn | date: 'MM/dd/yyyy hh:mm:ss' }}
+        Cooked at
       </div>
     </div>
-    <hr/>
+    <hr />
+
+    <div class="row">
+      <div *ngFor="let pizza of this.jsonPizzas">
+        <div class="row">
+          <div class="col-lg-3 text-center">
+            {{ pizza.id }}
+          </div>
+          <div class="col-lg-4 text-center">
+            {{ pizza.name }}
+          </div>
+          <div class="col-lg-5 text-center">
+            {{ pizza.cookedOn | date: 'MM/dd/yyyy hh:mm:ss' }}
+          </div>
+        </div>
+        <hr/>
+      </div>
+    </div>
   </div>
+  <ng-template #noPizzasBlock>
+    <div class="text-center">
+      <h4>
+        Sorry, we don't have an more pizzas today.
+      </h4>
+    </div>
+    <hr />
+  </ng-template>
 </div>
-<br />
+
 <div class="row">
   <div class="col-lg-2">
     Enter Pizza ID:
   </div>
   <div class="col-lg-2">
-    <input type="text" id="tbPizzaId" placeholder="Pizza ID" />
+    <input type="text" id="tbPizzaId" class="pizza-id" placeholder="Pizza ID" />
   </div>
 
   <div class="col-lg-2">
@@ -60,3 +70,7 @@
   </div>
 </div>
 <br />
+<br />
+<br />
+<br />
+

@@ -1,8 +1,12 @@
 .row {
-    margin-left: 0px;
-    margin-right: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 div {
-    width: -webkit-fill-available;
+  width: -webkit-fill-available;
+}
+
+input.pizza-id {
+  width: 100%;
 }

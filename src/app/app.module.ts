@@ -9,6 +9,7 @@ import { HttpTestModule } from './http-test/http-test.module';
 
 import { AppComponent } from './app.component';
 import { MyCustomComponent } from './my-custom/my-custom.component';
+import { UiModule } from './ui/ui.module';
 // import { ListingPageComponent } from './listing-page/listing-page.component';
 // import { HeroesComponent } from './heroes/heroes.component';
 // import { HeroListComponent } from './heroes/hero-list.component';
@@ -19,6 +20,7 @@ import { MyCustomComponent } from './my-custom/my-custom.component';
     HttpClientModule,
     HttpTestModule,
     PizzaModule,
+    UiModule,
     // SvctestModule
     // HeroesModule,
     // MyCustomModule,
