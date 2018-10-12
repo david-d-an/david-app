@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 
 import { QueryOptions } from './query-options';
-import { Resource } from './resource';
+import { Resource } from '../model/resource';
 import { Serializer } from './serializer';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';

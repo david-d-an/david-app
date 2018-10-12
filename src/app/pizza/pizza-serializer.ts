@@ -1,4 +1,4 @@
-import { Pizza } from './pizza';
+import { Pizza } from '../model/pizza';
 import * as moment from 'moment';
 
 export class PizzaSerializer {

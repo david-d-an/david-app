@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { ResourceService } from './resource.service';
-import { Pizza } from './pizza';
+import { Pizza } from '../model/pizza';
 
 describe('ResourceService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

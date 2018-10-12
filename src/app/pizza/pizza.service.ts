@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import 'rxjs/add/operator/catch';
 
-import { Pizza } from './pizza';
+import { Pizza } from '../model/pizza';
 import { PizzaSerializer } from './pizza-serializer';
 import { ResourceService } from './resource.service';
 
