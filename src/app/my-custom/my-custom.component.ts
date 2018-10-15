@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-custom.component.css']
 })
 export class MyCustomComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
   }
-
 }

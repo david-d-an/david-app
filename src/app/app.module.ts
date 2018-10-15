@@ -1,22 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
-import { HttpTestModule } from './http-test/http-test.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { MyCustomComponent } from './my-custom/my-custom.component';
 import { UiModule } from './ui/ui.module';
 import { AppRoutingModule } from './app-routing.module';
 
-import { PizzaModule } from './pizza/pizza.module';
 import { HeroesModule } from './heroes/heroes.module';
-// import { MyCustomModule } from './my-custom/my-custom.module';
-
-// import { ListingPageComponent } from './listing-page/listing-page.component';
-// import { HeroesComponent } from './heroes/heroes.component';
-// import { HeroListComponent } from './heroes/hero-list.component';
-
+import { HttpTestModule } from './http-test/http-test.module';
+import { ListingPageModule } from './listing-page/listing-page.module';
+import { MyCustomModule } from './my-custom/my-custom.module';
+import { PizzaModule } from './pizza/pizza.module';
 
 @NgModule({
   declarations: [
@@ -27,11 +22,12 @@ import { HeroesModule } from './heroes/heroes.module';
     HttpClientModule,
     AppRoutingModule,
     UiModule,
+    NgbModule.forRoot(),
     HeroesModule,
-    PizzaModule,
-    // HttpTestModule,
-    // SvctestModule
-    // MyCustomModule,
+    HttpTestModule,
+    ListingPageModule,
+    MyCustomModule,
+    PizzaModule
   ],
   providers: [],
   bootstrap: [

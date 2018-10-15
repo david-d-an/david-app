@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import { MyCustomComponent } from './my-custom.component';
+
+import { MyCustomComponent } from './my-custom.component';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: []
+  exports: [MyCustomComponent],
+  declarations: [MyCustomComponent]
 })
 export class MyCustomModule { }
