@@ -14,6 +14,21 @@
             "id": 3,
             "name": "Hawaiian Pizza",
             "cookedOn": "03/01/2018 11:00:00"
+        },
+        {
+            "id": 4,
+            "name": "Supreme Pizza",
+            "cookedOn": "04/01/2018 21:00:00"
+        },
+        {
+            "id": 5,
+            "name": "BBQ Pizza",
+            "cookedOn": "05/01/2018 17:00:00"
+        },
+        {
+            "id": 6,
+            "name": "Double Cheese Pizza",
+            "cookedOn": "06/01/2018 14:00:00"
         }
     ]
 }
