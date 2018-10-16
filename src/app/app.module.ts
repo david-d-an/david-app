@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { UiModule } from './ui/ui.module';
 import { AppRoutingModule } from './app-routing.module';
 
+import { HomeModule } from './home/home.module';
 import { HeroesModule } from './heroes/heroes.module';
 import { HttpTestModule } from './http-test/http-test.module';
 import { ListingPageModule } from './listing-page/listing-page.module';
 import { MyCustomModule } from './my-custom/my-custom.module';
 import { PizzaModule } from './pizza/pizza.module';
+import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 
 @NgModule({
   declarations: [
@@ -23,11 +25,13 @@ import { PizzaModule } from './pizza/pizza.module';
     AppRoutingModule,
     UiModule,
     NgbModule.forRoot(),
+    HomeModule,
     HeroesModule,
     HttpTestModule,
     ListingPageModule,
     MyCustomModule,
-    PizzaModule
+    PizzaModule,
+    PageNotFoundModule
   ],
   providers: [],
   bootstrap: [
