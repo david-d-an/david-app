@@ -14,10 +14,12 @@ import { ListingPageModule } from './listing-page/listing-page.module';
 import { MyCustomModule } from './my-custom/my-custom.module';
 import { PizzaModule } from './pizza/pizza.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
+import { AboutModule } from './about/about.module';
+import { ContactModule } from './contact/contact.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,9 @@ import { PageNotFoundModule } from './page-not-found/page-not-found.module';
     ListingPageModule,
     MyCustomModule,
     PizzaModule,
-    PageNotFoundModule
+    PageNotFoundModule,
+    AboutModule,
+    ContactModule
   ],
   providers: [],
   bootstrap: [
