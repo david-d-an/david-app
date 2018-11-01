@@ -13,7 +13,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./pizza.component.css']
 })
 export class PizzaComponent implements OnInit {
-  public jsonPizzas: any;
+  private jsonPizzas: any;
   private queryOptions: QueryOptions;
   @Input() pizzaName: string;
   @Input() pizzaCookedOn: Date;
