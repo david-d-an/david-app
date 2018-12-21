@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HashLocationStrategy, PathLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { UiModule } from './ui/ui.module';
@@ -24,7 +25,6 @@ import { ContactModule } from './contact/contact.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
     UiModule,
     NgbModule.forRoot(),
     HomeModule,
@@ -35,9 +35,16 @@ import { ContactModule } from './contact/contact.module';
     PizzaModule,
     PageNotFoundModule,
     AboutModule,
-    ContactModule
+    ContactModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: PathLocationStrategy
+      // useClass: HashLocationStrategy
+    }
+  ],
   bootstrap: [
     AppComponent
   ]
