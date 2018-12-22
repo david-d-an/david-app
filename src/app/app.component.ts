@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'david-app';
+  title = 'angular-pizza';
   textcolor: string;
 
   changeColor() {

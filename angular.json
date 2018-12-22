@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "david-app": {
+    "angular-pizza": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -35,7 +35,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/david-app",
+            "outputPath": "dist/angular-pizza",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -76,19 +76,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "david-app:build",
+            "browserTarget": "angular-pizza:build",
             "port": 4300
           },
           "configurations": {
             "production": {
-              "browserTarget": "david-app:build:production"
+              "browserTarget": "angular-pizza:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "david-app:build"
+            "browserTarget": "angular-pizza:build"
           }
         },
         "test": {
@@ -122,7 +122,7 @@
         }
       }
     },
-    "david-app-e2e": {
+    "angular-pizza-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "targets": {
@@ -130,11 +130,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "david-app:serve"
+            "devServerTarget": "angular-pizza:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "david-app:serve:production"
+              "devServerTarget": "angular-pizza:serve:production"
             }
           }
         },
@@ -150,5 +150,5 @@
       }
     }
   },
-  "defaultProject": "david-app"
+  "defaultProject": "angular-pizza"
 }
